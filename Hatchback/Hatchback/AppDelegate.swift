@@ -46,12 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("APPDELEGATE -- applicationWillTerminate \t\t- the app is about to be terminated from memory")
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps:")!) {
-        }
-        
-        return false
-    }
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps:")!) {
+//        }
+//        
+//        return false
+//    }
 
     // this will be used for opening spotify, apple music, google maps, and apple maps
     //    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

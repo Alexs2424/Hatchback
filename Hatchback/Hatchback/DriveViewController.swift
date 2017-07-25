@@ -7,26 +7,44 @@
 //
 
 import UIKit
+import CoreLocation
 
-class DriveViewController: UIViewController {
+class DriveViewController: UIViewController, CLLocationManagerDelegate {
     
+    //Global Variables
+    let locationManager = CLLocationManager()
     var timer:Timer = Timer()
     var startTime:TimeInterval = 0.0
+    let hb = HB()
+    let defaults = DriveDefaults()
     
     @IBOutlet weak var timerLabel:UILabel!
+    @IBOutlet weak var speedometer: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Distraction Free"
+        self.title = "Drive"
         
+        //Location manager setup
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        defaults.setDriveStartDateForNow()
+      
         self.setTimer()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        defaults.setLeftAppUnflagged()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print("DriveViewController -- MemoryWarning")
     }
     
     @IBAction func openMusic(_ sender: Any) {
@@ -46,11 +64,21 @@ class DriveViewController: UIViewController {
     @IBAction func endButton(_ sender: Any) {
         self.endTimer()
         
+        defaults.setDriveEndDateForNow()
+        defaults.setDriveFinished()
         //bring up the ui for ending a drive
+        //switching to drive end view, and save, 
+        //the data that we need to pass.
+        
+        let endDriveVC = self.storyboard?.instantiateViewController(withIdentifier: "EndDrive") as! EndDriveViewController
+        self.navigationController?.pushViewController(endDriveVC, animated: true)
     }
 
     
     func openApp(appURLString: String) {
+        //We are leaving the app so we want to flag that they left it in the right way
+        defaults.setLeftAppFlagged()
+        
         if let url = URL(string: appURLString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: {(success: Bool)
                 in if success {
@@ -83,7 +111,8 @@ class DriveViewController: UIViewController {
         let seconds = UInt8(elapsedTime)
         elapsedTime -= TimeInterval(seconds)
         
-        
+        //we'll also update the speedometer
+        self.updateSpeedometer()
         
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
@@ -115,4 +144,20 @@ class DriveViewController: UIViewController {
     
     //apple maps 
     //maps://
+    
+    func updateSpeedometer() {
+        var speed: CLLocationSpeed = CLLocationSpeed()
+        speed = locationManager.location!.speed
+        
+        //DEBUG ONLY
+        //print("DriveViewController -- Current Speed in Apple's format: \(speed)\nDriveViewController -- Current Speed in MPH: \(speed * 2.23693629)")
+        
+        speed *= 2.23693629 //2.23693629 constant makes it mph
+        
+        let speedString = String(format: "Current Speed --  %.02f", speed)
+        
+        self.speedometer.text = speedString
+        
+
+    }
 }
