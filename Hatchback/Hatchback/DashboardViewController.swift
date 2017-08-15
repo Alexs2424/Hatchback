@@ -15,13 +15,14 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
     
     @IBOutlet weak var lastDriveGraph: graph2D!
     
-    private let testGraphPoints = [pointForGraph.init(fromX: 0, fromY: 0),
-                                   pointForGraph.init(fromX: 14, fromY: 25),
-                                   pointForGraph.init(fromX: 28, fromY: 50),
-                                   pointForGraph.init(fromX: 42, fromY: 25),
-                                   pointForGraph.init(fromX: 56, fromY: 75),
-                                   pointForGraph.init(fromX: 70, fromY: 90),
-                                   pointForGraph.init(fromX: 84, fromY: 100)]
+    private let testGraphPoints = [pointForGraph.init(fromX: 0, fromY: abs(0 - 100)),
+                                   pointForGraph.init(fromX: 14, fromY: abs(25 - 100)),
+                                   pointForGraph.init(fromX: 28, fromY: abs(50 - 100)),
+                                   pointForGraph.init(fromX: 42, fromY: abs(25 - 100)),
+                                   pointForGraph.init(fromX: 42, fromY: abs(100 - 100)),
+                                   pointForGraph.init(fromX: 56, fromY: abs(75 - 100)),
+                                   pointForGraph.init(fromX: 70, fromY: abs(90 - 100)),
+                                   pointForGraph.init(fromX: 84, fromY: abs(100 - 100))]
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
