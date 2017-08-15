@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */; };
+		171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171259F71F41DF0A00F6F76A /* DashbaordCell.swift */; };
 		174B298B1F15370D000B56FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B298A1F15370D000B56FE /* AppDelegate.swift */; };
 		174B298D1F15370D000B56FE /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B298C1F15370D000B56FE /* DashboardViewController.swift */; };
 		174B29921F15370D000B56FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174B29901F15370D000B56FE /* Main.storyboard */; };
@@ -15,12 +17,33 @@
 		174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B299E1F1539BF000B56FE /* SettingsViewController.swift */; };
 		174B29A11F1539D1000B56FE /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B29A01F1539D1000B56FE /* DriveViewController.swift */; };
 		174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B29A81F17A590000B56FE /* WeeklyHistoryViewController.swift */; };
+		1769A4C31F431D76002A576B /* Graph2DFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4C21F431D76002A576B /* Graph2DFramework.framework */; };
+		1769A4C41F431D77002A576B /* Graph2DFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4C21F431D76002A576B /* Graph2DFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17A8419D1F213C530043BCD8 /* HBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419C1F213C530043BCD8 /* HBConstants.swift */; };
 		17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419F1F276D040043BCD8 /* DriveDefaults.swift */; };
 		17A841A21F2788F90043BCD8 /* EndDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */; };
+		17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F3735A1F41E7AF008C6D22 /* DateExtension.swift */; };
+		94D031376EBF8BED12FF0281 /* Pods_Hatchback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1769A4BE1F4226D2002A576B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1769A4C41F431D77002A576B /* Graph2DFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0274383DCF8CE73BA0C3B5C5 /* Pods-Hatchback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchback.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback.release.xcconfig"; sourceTree = "<group>"; };
+		171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		171259F71F41DF0A00F6F76A /* DashbaordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashbaordCell.swift; sourceTree = "<group>"; };
 		174B29871F15370D000B56FE /* Hatchback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174B298A1F15370D000B56FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		174B298C1F15370D000B56FE /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -31,9 +54,13 @@
 		174B299E1F1539BF000B56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		174B29A01F1539D1000B56FE /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
 		174B29A81F17A590000B56FE /* WeeklyHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyHistoryViewController.swift; sourceTree = "<group>"; };
+		1769A4C21F431D76002A576B /* Graph2DFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Graph2DFramework.framework; sourceTree = "<group>"; };
 		17A8419C1F213C530043BCD8 /* HBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBConstants.swift; sourceTree = "<group>"; };
 		17A8419F1F276D040043BCD8 /* DriveDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDefaults.swift; sourceTree = "<group>"; };
 		17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDriveViewController.swift; sourceTree = "<group>"; };
+		17F3735A1F41E7AF008C6D22 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		58D388DA18FD09C0B3BF7FBA /* Pods-Hatchback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback.debug.xcconfig"; sourceTree = "<group>"; };
+		BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hatchback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +68,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1769A4C31F431D76002A576B /* Graph2DFramework.framework in Frameworks */,
+				94D031376EBF8BED12FF0281 /* Pods_Hatchback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F612850A8A247679A50F666 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58D388DA18FD09C0B3BF7FBA /* Pods-Hatchback.debug.xcconfig */,
+				0274383DCF8CE73BA0C3B5C5 /* Pods-Hatchback.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		171259F51F41DECE00F6F76A /* Dashboard Table View */ = {
+			isa = PBXGroup;
+			children = (
+				171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */,
+				171259F61F41DEDA00F6F76A /* Dashbaord Table View Cell */,
+			);
+			name = "Dashboard Table View";
+			sourceTree = "<group>";
+		};
+		171259F61F41DEDA00F6F76A /* Dashbaord Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				171259F71F41DF0A00F6F76A /* DashbaordCell.swift */,
+			);
+			name = "Dashbaord Table View Cell";
+			sourceTree = "<group>";
+		};
 		174B297E1F15370D000B56FE = {
 			isa = PBXGroup;
 			children = (
+				1769A4C21F431D76002A576B /* Graph2DFramework.framework */,
 				174B29891F15370D000B56FE /* Hatchback */,
 				174B29881F15370D000B56FE /* Products */,
+				0F612850A8A247679A50F666 /* Pods */,
+				375A12A46647C9A1A082B1D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +141,7 @@
 			children = (
 				17A841A31F2789020043BCD8 /* Drive */,
 				174B298C1F15370D000B56FE /* DashboardViewController.swift */,
+				171259F51F41DECE00F6F76A /* Dashboard Table View */,
 			);
 			name = "Dashboard and Drive";
 			sourceTree = "<group>";
@@ -116,6 +175,7 @@
 		17A8419E1F276CAC0043BCD8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17F3735A1F41E7AF008C6D22 /* DateExtension.swift */,
 				17A8419F1F276D040043BCD8 /* DriveDefaults.swift */,
 			);
 			name = Models;
@@ -130,6 +190,14 @@
 			name = Drive;
 			sourceTree = "<group>";
 		};
+		375A12A46647C9A1A082B1D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +205,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 174B299B1F15370D000B56FE /* Build configuration list for PBXNativeTarget "Hatchback" */;
 			buildPhases = (
+				31999C01CFF5E64963B87304 /* [CP] Check Pods Manifest.lock */,
 				174B29831F15370D000B56FE /* Sources */,
 				174B29841F15370D000B56FE /* Frameworks */,
 				174B29851F15370D000B56FE /* Resources */,
+				065DCC121AEF45D03815C9FA /* [CP] Embed Pods Frameworks */,
+				75AACC27628AD0475B0883FA /* [CP] Copy Pods Resources */,
+				1769A4BE1F4226D2002A576B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +270,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		065DCC121AEF45D03815C9FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31999C01CFF5E64963B87304 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75AACC27628AD0475B0883FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		174B29831F15370D000B56FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -209,7 +329,10 @@
 				17A8419D1F213C530043BCD8 /* HBConstants.swift in Sources */,
 				174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */,
 				174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */,
+				17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */,
+				171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */,
 				17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */,
+				171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */,
 				17A841A21F2788F90043BCD8 /* EndDriveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,10 +454,17 @@
 		};
 		174B299C1F15370D000B56FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D388DA18FD09C0B3BF7FBA /* Pods-Hatchback.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8ES66X8FF8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Hatchback",
+				);
 				INFOPLIST_FILE = Hatchback/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iinnovatellc.Hatchback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -344,10 +474,17 @@
 		};
 		174B299D1F15370D000B56FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0274383DCF8CE73BA0C3B5C5 /* Pods-Hatchback.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8ES66X8FF8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Hatchback",
+				);
 				INFOPLIST_FILE = Hatchback/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iinnovatellc.Hatchback;
 				PRODUCT_NAME = "$(TARGET_NAME)";

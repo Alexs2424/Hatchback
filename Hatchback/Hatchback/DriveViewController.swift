@@ -8,9 +8,12 @@
 
 import UIKit
 import CoreLocation
+//import Graph2DFramework
 
 class DriveViewController: UIViewController, CLLocationManagerDelegate {
     
+    
+    //Testing the keyboard
     //Global Variables
     let locationManager = CLLocationManager()
     var timer:Timer = Timer()
@@ -18,13 +21,21 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
     let hb = HB()
     let defaults = DriveDefaults()
     
+    
     @IBOutlet weak var timerLabel:UILabel!
     @IBOutlet weak var speedometer: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //View UI setup
         self.title = "Drive"
+        
+        //Defaults setup
+        defaults.setIsFirstTime()
+        defaults.setCurrentlyInDrive()
+        defaults.setDriveStartDateForNow()
+        defaults.setLeftAppUnflagged()
         
         //Location manager setup
         locationManager.delegate = self
@@ -32,14 +43,18 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        defaults.setDriveStartDateForNow()
       
         self.setTimer()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        defaults.setLeftAppUnflagged()
+        //View setup before it's pushed
+        self.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +65,7 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func openMusic(_ sender: Any) {
         let appleMusicLink = "music://"
         let spotifyMusicLink = "spotify://"
-        openApp(appURLString: spotifyMusicLink)
+        openApp(appURLString: appleMusicLink)
 
         
     }
@@ -58,7 +73,7 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func openMaps(_ sender: Any) {
         let mapsLink = "maps://"
         let googleMapsLink = "comgooglemaps://"
-        openApp(appURLString: googleMapsLink)
+        openApp(appURLString: mapsLink)
     }
     
     @IBAction func endButton(_ sender: Any) {
@@ -70,6 +85,9 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
         //switching to drive end view, and save, 
         //the data that we need to pass.
         
+        //DEBUG FUNCTION CALL
+        defaults.debugDefaultStates()
+        
         let endDriveVC = self.storyboard?.instantiateViewController(withIdentifier: "EndDrive") as! EndDriveViewController
         self.navigationController?.pushViewController(endDriveVC, animated: true)
     }
@@ -80,13 +98,19 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
         defaults.setLeftAppFlagged()
         
         if let url = URL(string: appURLString), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: {(success: Bool)
-                in if success {
-                    print("Launching \(url)")
-                
-                } else {
-                    print("There was an error")
-                }})
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: {(success: Bool)
+                    in if success {
+                        
+                        
+                        print("Launching \(url)")
+                        
+                    } else {
+                        print("There was an error")
+                    }})
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
@@ -111,8 +135,9 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
         let seconds = UInt8(elapsedTime)
         elapsedTime -= TimeInterval(seconds)
         
+        //uncommment on real device
         //we'll also update the speedometer
-        self.updateSpeedometer()
+//        self.updateSpeedometer()
         
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         

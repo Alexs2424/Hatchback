@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,14 +17,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Parse Initialization
+        let hbParseConfig = ParseClientConfiguration {
+            $0.applicationId = "vHOMNx9oySuKL32PYmX4eljf"
+            $0.clientKey = "YO6eUzEIiylXhxGNuFpbss5z6NliC2vD"
+            $0.server = "https://hatchback.herokuapp.com/parse"
+            // not recommended to include a clientkey $0.clientKey = ""
+        }
+        Parse.initialize(with: hbParseConfig)
+        
+        PFAnalytics.trackAppOpened(launchOptions: launchOptions)
+        
+        //PFUser Setup //implement later
+        //PFUser.enableRevocableSessionInBackground()
+        
+        
+        //Actual setup for a trip: 
+        //Time
+        //Distance? 
+        //Distracted Time
+        //Total Time
+        //email of person who completed the trip.
+        //create a class for trips
+        
+//        let trip = PFObject(className:"Trip")
+//        trip["time"] =  12321
+//        trip.saveInBackground {
+//            (success: Bool, error: Error?) -> Void in
+//            if (success) {
+//                // The object has been saved.
+//                print("Item was saved 😅")
+//            } else {
+//                // There was a problem, check error.description
+//                print("There was an error: \(error!)\n\(error!.localizedDescription)")
+//            }
+//        }
+
+        
+        //Appearance base attributes
+        UITabBar.appearance().tintColor = UIColor(red: 230.0/255.0, green: 84.0/255.0, blue: 32.0/255.0, alpha: 1.0)
+        
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
         print("APPDELEGATE -- applicationWillResignActive \t\t- app is transtitioning into the background state")
+        
+        let defaults = DriveDefaults()
+
+        if defaults.getDriveStatus() { //currently in drive
+            //implementing the logic version of hatchback, penalization for leaving the app not through a button.
+            if defaults.checkForAppLeftUnflagged() { //chceking to see if they left the app validated (correctly)
+                print("APPDELEGATE -- applicationWillResignActive \t\t- app is being left flagged, the leave is okay.")
+            } else {
+                print("APPDELEGATE -- applicationWillResignActive \t\t- app is being left unflagged. We are starting the second timer.")
+                defaults.setStartDriveDistractedDate()
+            }
+        }
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -34,6 +90,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         print("APPDELEGATE -- applicationWillEnterForeground \t- app transitioning from background to Foreground state")
+        
+        //implementing the logic version of hatchback, penalization for leaving the app early
+
+        let defaults =  DriveDefaults()
+
+        if defaults.getDriveStatus() { //currently in drive
+            if defaults.checkForAppLeftUnflagged() {
+                print("APPDELEGATE -- applicationWillEnterForeground \t- app leave is validated.")
+            } else {
+                print("APPDELEGATE -- applicationWillEnterForeground \t- app leave is unvalidated, tracking the time.")
+                defaults.setDriveEndDistractedDate()
+                
+                let startDate = defaults.getDistractedTimeStart()
+                let endDate = defaults.getDistractedTimeEnd()
+                
+                let amtOfDistractedTime = endDate.timeIntervalSince(startDate)
+                
+                defaults.setTimeDistracted(time: amtOfDistractedTime)
+                print("APPDELEGATE -- applicationWillEnterForeground \t- finished the distraction")
+            }
+            
+        }
+        
+        defaults.resetAppLeftFlagged()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
