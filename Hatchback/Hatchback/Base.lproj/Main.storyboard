@@ -63,10 +63,10 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iaf-8w-Kvg" customClass="graph2D" customModule="Graph2DFramework">
-                                <rect key="frame" x="30" y="169" width="140" height="45"/>
+                                <rect key="frame" x="34" y="169" width="130" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="3dc-Yb-gAI"/>
+                                    <constraint firstAttribute="width" constant="130" id="3dc-Yb-gAI"/>
                                     <constraint firstAttribute="height" constant="45" id="Me8-dI-jal"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -89,7 +89,7 @@
                         <constraints>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="ZhJ-BY-xfP" secondAttribute="bottom" id="2sm-UU-wiP"/>
                             <constraint firstItem="q2D-JL-5ud" firstAttribute="leading" secondItem="QFG-m1-Ngx" secondAttribute="leading" id="7JG-jk-B4B"/>
-                            <constraint firstItem="Iaf-8w-Kvg" firstAttribute="centerX" secondItem="q2D-JL-5ud" secondAttribute="centerX" id="8wK-6a-a67"/>
+                            <constraint firstItem="Iaf-8w-Kvg" firstAttribute="centerX" secondItem="q2D-JL-5ud" secondAttribute="centerX" constant="-1.5" id="8wK-6a-a67"/>
                             <constraint firstItem="ZhJ-BY-xfP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="Jn0-Mq-Hgq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pkb-tT-F99" secondAttribute="trailing" constant="5" id="KQC-pX-hV5"/>
                             <constraint firstItem="thz-4T-YE9" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="12" id="Mp7-D7-gdE"/>
