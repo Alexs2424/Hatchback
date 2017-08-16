@@ -7,22 +7,28 @@
 //
 
 import UIKit
+import Parse
 
 class EndDriveViewController: UIViewController {
     
     @IBOutlet weak var driveTime: UILabel!
-    @IBOutlet weak var debugLabel: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
     
     //global variables 
     let defaults = DriveDefaults()
     let df = DateFormatter()
 
     var totalTime:TimeInterval = 0.0
+    var percentage:Int = 0
+    var dateStart:Date = Date()
+    var distractedTime:TimeInterval = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         defaults.setNotInDrive()
+        self.dateStart = defaults.getDriveStartTime()
+        self.distractedTime = defaults.getTimeDistracted()
         self.displayDistractedTime()
         self.displayTime()
         self.calculateDrivingPercentage()
@@ -43,6 +49,21 @@ class EndDriveViewController: UIViewController {
     //IBActions
     @IBAction func doneButton(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
+        defaults.clearAll()
+        
+        
+        //setting the correct format for the date 
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd-mm-yyyy"
+//        dateFormatter.timeZone = TimeZone(abbreviation: "EST")
+        
+//        let newFormatStartDate = dateFormatter.date
+        
+        self.createTrip(tripTime: self.totalTime,
+                        dateStart: self.dateStart,
+                        distractedTime: self.distractedTime,
+                        drivePercentage: self.percentage,
+                        email: "asantarelli@andculture.com")
     }
     
     
@@ -51,7 +72,7 @@ class EndDriveViewController: UIViewController {
         let amtDistrTime = defaults.getTimeDistracted()
         
         if (amtDistrTime == 0.0) {
-            self.debugLabel.text = "Distracted Time: 0:00"
+//            self.debugLabel.text = "Distracted Time: 0:00"
             return
         }
         
@@ -80,7 +101,7 @@ class EndDriveViewController: UIViewController {
         }
         
         //setting the debug info label for the amount of distracted time.
-        self.debugLabel.text = "Distracted Time: \(minString):\(secString)"
+//        self.debugLabel.text = "Distracted Time:  
         
     }
     
@@ -88,13 +109,19 @@ class EndDriveViewController: UIViewController {
         let distrTime = defaults.getTimeDistracted()
         
         if (distrTime == 0.0) {
-            self.debugLabel.text = self.debugLabel.text! + "                   Driving Percentage: 100%"
+            self.percentageLabel.text = "100%"
+            
+            self.percentage = 100
         } else {
             let percentage = floor(100 - (100 * (distrTime / self.totalTime)))
             
-            self.debugLabel.text = self.debugLabel.text! + "                        Driving Percentage: \(percentage)%"
+            self.percentage = Int(percentage)
+            
+            self.percentageLabel.text = "\(self.percentage)%"
+            
         }
-
+        
+        
         
     }
     
@@ -141,6 +168,26 @@ class EndDriveViewController: UIViewController {
     
         //setting the label after all of the formatting
         self.driveTime.text = "\(minutesString):\(secondsString)"
+    }
+    
+    //Creating the parse object to upload 
+    func createTrip(tripTime: TimeInterval, dateStart: Date, distractedTime: TimeInterval, drivePercentage: Int, email: String) {
+        
+        let trip = PFObject(className: "Trip")
+        trip["tripTime"] = tripTime
+        trip["dateStart"] = dateStart
+        trip["drivePercentage"] = drivePercentage
+        trip["email"] = email
+        trip.saveInBackground {
+            (success: Bool, error: Error?) -> Void in
+            if (success) {
+                print("Trip has been created. ")
+            } else {
+                // There was a problem, check error.description
+                print("There was an error: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        
     }
 
 }

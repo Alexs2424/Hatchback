@@ -68,6 +68,7 @@ class DashboardTableViewController: PFQueryTableViewController {
             //grabbing the time that the drive started at
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:MM a"
+            dateFormatter.timeZone = TimeZone(abbreviation: "EST")
             var stringFromDate = dateFormatter.string(from: date)
             
             //converting the total duration of the trip
@@ -78,13 +79,15 @@ class DashboardTableViewController: PFQueryTableViewController {
             //then we want to display hours and minutes
             
             //setting the duration info label
+            
+            //Removing the leading 0 from posts
+            if stringFromDate.characters.first == "0" {
+                stringFromDate.characters.removeFirst()
+            }
 
             if minsDriven > 59 {
                 let hoursDriven = Int(minsDriven / 60)
                 minsDriven -= (hoursDriven * 60)
-                if stringFromDate.characters.first == "0" {
-                    stringFromDate.characters.removeFirst()
-                }
                 
                 if hoursDriven > 1 {
                     dashCell?.timeDurationLabel.text = "\(stringFromDate.lowercased()) - \(hoursDriven) hrs \(minsDriven) minutes"
