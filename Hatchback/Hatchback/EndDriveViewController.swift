@@ -15,8 +15,10 @@ class EndDriveViewController: UIViewController {
     @IBOutlet weak var percentageLabel: UILabel!
     
     //global variables 
+    let hb = HB()
     let defaults = DriveDefaults()
     let df = DateFormatter()
+    let rewards = KiipRewardManager()
 
     var totalTime:TimeInterval = 0.0
     var percentage:Int = 0
@@ -38,6 +40,8 @@ class EndDriveViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         //View setup before it's pushed
         self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        //check the current percentage and then show the image based upon what percentage it's at.
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +55,8 @@ class EndDriveViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
         defaults.clearAll()
         
+        defaults.setPrevDriveTime(time: self.totalTime)
+        defaults.setPrevDrivePercentage(percentage: self.percentage)
         
         //setting the correct format for the date 
 //        let dateFormatter = DateFormatter()
@@ -64,6 +70,12 @@ class EndDriveViewController: UIViewController {
                         distractedTime: self.distractedTime,
                         drivePercentage: self.percentage,
                         email: "asantarelli@andculture.com")
+    }
+    
+    @IBAction func redeemButton(_ sender: Any) {
+        rewards.presentKiipReward() //check the percentage to make sure that it'll work out in the end 
+        //also after they redeem the reward chenge the color and make it gray, and un-interactable to show it can't be used
+        //do the same with when they do below our threshold
     }
     
     
@@ -101,7 +113,7 @@ class EndDriveViewController: UIViewController {
         }
         
         //setting the debug info label for the amount of distracted time.
-//        self.debugLabel.text = "Distracted Time:  
+//        self.debugLabel.text = "Distracted Time:
         
     }
     
@@ -120,9 +132,7 @@ class EndDriveViewController: UIViewController {
             self.percentageLabel.text = "\(self.percentage)%"
             
         }
-        
-        
-        
+                
     }
     
     //Calculations to do with time,
@@ -137,37 +147,39 @@ class EndDriveViewController: UIViewController {
         
         self.totalTime = timePastDriveStart
         
+        hb.formatTimeForLabel(time: self.totalTime, label: self.driveTime)
+        
         //example
-        
-        var minutes = floor(timePastDriveStart / 60)
-        var seconds = round(timePastDriveStart - minutes * 60)
-        
-        var minutesString = ""
-        var secondsString = ""
-        
-        //minutes calculated
-        minutes = floor(minutes)
-        let minInt:Int = Int(minutes)
-        if minutes <= 9 {
-            
-            minutesString = "0\(minInt)"
-        } else {
-            
-            minutesString = "\(minInt)"
-        }
-        
-        //seconds calculated
-        seconds = floor(seconds)
-        let secInt:Int = Int(seconds)
-        if seconds <= 9 {
-            
-            secondsString = "0\(secInt)"
-        } else {
-            secondsString = "\(secInt)"
-        }
-    
-        //setting the label after all of the formatting
-        self.driveTime.text = "\(minutesString):\(secondsString)"
+//        
+//        var minutes = floor(timePastDriveStart / 60)
+//        var seconds = round(timePastDriveStart - minutes * 60)
+//        
+//        var minutesString = ""
+//        var secondsString = ""
+//        
+//        //minutes calculated
+//        minutes = floor(minutes)
+//        let minInt:Int = Int(minutes)
+//        if minutes <= 9 {
+//            
+//            minutesString = "0\(minInt)"
+//        } else {
+//            
+//            minutesString = "\(minInt)"
+//        }
+//        
+//        //seconds calculated
+//        seconds = floor(seconds)
+//        let secInt:Int = Int(seconds)
+//        if seconds <= 9 {
+//            
+//            secondsString = "0\(secInt)"
+//        } else {
+//            secondsString = "\(secInt)"
+//        }
+//    
+//        //setting the label after all of the formatting
+//        self.driveTime.text = "\(minutesString):\(secondsString)"
     }
     
     //Creating the parse object to upload 

@@ -19,7 +19,17 @@
 		174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B29A81F17A590000B56FE /* WeeklyHistoryViewController.swift */; };
 		1769A4C31F431D76002A576B /* Graph2DFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4C21F431D76002A576B /* Graph2DFramework.framework */; };
 		1769A4C41F431D77002A576B /* Graph2DFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4C21F431D76002A576B /* Graph2DFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		17A8419D1F213C530043BCD8 /* HBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419C1F213C530043BCD8 /* HBConstants.swift */; };
+		1769A4C81F44BE47002A576B /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1769A4C61F44BE47002A576B /* KiipSDKResources.bundle */; };
+		1769A4C91F44BE56002A576B /* KiipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4C51F44BE47002A576B /* KiipSDK.framework */; };
+		1769A4CD1F44C2AB002A576B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4CC1F44C2AB002A576B /* MediaPlayer.framework */; };
+		1769A4CF1F44C2B3002A576B /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4CE1F44C2B3002A576B /* PassKit.framework */; };
+		1769A4D11F44C2BB002A576B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4D01F44C2BB002A576B /* AdSupport.framework */; };
+		1769A4D31F44C2CC002A576B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4D21F44C2CC002A576B /* CoreLocation.framework */; };
+		1769A4D51F44C2D7002A576B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4D41F44C2D7002A576B /* SystemConfiguration.framework */; };
+		1769A4D71F44C2DF002A576B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4D61F44C2DF002A576B /* QuartzCore.framework */; };
+		1769A4D91F44C2FF002A576B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1769A4D81F44C2FF002A576B /* CoreTelephony.framework */; };
+		1769A4DB1F44C37F002A576B /* KiipRewardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769A4DA1F44C37F002A576B /* KiipRewardManager.swift */; };
+		17A8419D1F213C530043BCD8 /* HBFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419C1F213C530043BCD8 /* HBFormat.swift */; };
 		17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419F1F276D040043BCD8 /* DriveDefaults.swift */; };
 		17A841A21F2788F90043BCD8 /* EndDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */; };
 		17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F3735A1F41E7AF008C6D22 /* DateExtension.swift */; };
@@ -55,7 +65,18 @@
 		174B29A01F1539D1000B56FE /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
 		174B29A81F17A590000B56FE /* WeeklyHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyHistoryViewController.swift; sourceTree = "<group>"; };
 		1769A4C21F431D76002A576B /* Graph2DFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Graph2DFramework.framework; sourceTree = "<group>"; };
-		17A8419C1F213C530043BCD8 /* HBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBConstants.swift; sourceTree = "<group>"; };
+		1769A4C51F44BE47002A576B /* KiipSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KiipSDK.framework; sourceTree = "<group>"; };
+		1769A4C61F44BE47002A576B /* KiipSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KiipSDKResources.bundle; sourceTree = "<group>"; };
+		1769A4CB1F44BFA0002A576B /* Hatchback-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hatchback-Bridging-Header.h"; sourceTree = "<group>"; };
+		1769A4CC1F44C2AB002A576B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1769A4CE1F44C2B3002A576B /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		1769A4D01F44C2BB002A576B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		1769A4D21F44C2CC002A576B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1769A4D41F44C2D7002A576B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1769A4D61F44C2DF002A576B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1769A4D81F44C2FF002A576B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1769A4DA1F44C37F002A576B /* KiipRewardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiipRewardManager.swift; sourceTree = "<group>"; };
+		17A8419C1F213C530043BCD8 /* HBFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFormat.swift; sourceTree = "<group>"; };
 		17A8419F1F276D040043BCD8 /* DriveDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDefaults.swift; sourceTree = "<group>"; };
 		17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDriveViewController.swift; sourceTree = "<group>"; };
 		17F3735A1F41E7AF008C6D22 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -68,6 +89,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1769A4D91F44C2FF002A576B /* CoreTelephony.framework in Frameworks */,
+				1769A4D71F44C2DF002A576B /* QuartzCore.framework in Frameworks */,
+				1769A4D51F44C2D7002A576B /* SystemConfiguration.framework in Frameworks */,
+				1769A4D31F44C2CC002A576B /* CoreLocation.framework in Frameworks */,
+				1769A4D11F44C2BB002A576B /* AdSupport.framework in Frameworks */,
+				1769A4CF1F44C2B3002A576B /* PassKit.framework in Frameworks */,
+				1769A4CD1F44C2AB002A576B /* MediaPlayer.framework in Frameworks */,
+				1769A4C91F44BE56002A576B /* KiipSDK.framework in Frameworks */,
 				1769A4C31F431D76002A576B /* Graph2DFramework.framework in Frameworks */,
 				94D031376EBF8BED12FF0281 /* Pods_Hatchback.framework in Frameworks */,
 			);
@@ -105,6 +134,8 @@
 		174B297E1F15370D000B56FE = {
 			isa = PBXGroup;
 			children = (
+				1769A4C51F44BE47002A576B /* KiipSDK.framework */,
+				1769A4C61F44BE47002A576B /* KiipSDKResources.bundle */,
 				1769A4C21F431D76002A576B /* Graph2DFramework.framework */,
 				174B29891F15370D000B56FE /* Hatchback */,
 				174B29881F15370D000B56FE /* Products */,
@@ -125,13 +156,14 @@
 			isa = PBXGroup;
 			children = (
 				174B298A1F15370D000B56FE /* AppDelegate.swift */,
-				17A8419C1F213C530043BCD8 /* HBConstants.swift */,
+				17A8419C1F213C530043BCD8 /* HBFormat.swift */,
 				17A8419E1F276CAC0043BCD8 /* Models */,
 				174B29A51F153ADA000B56FE /* View(VCs) */,
 				174B29901F15370D000B56FE /* Main.storyboard */,
 				174B29931F15370D000B56FE /* Assets.xcassets */,
 				174B29951F15370D000B56FE /* LaunchScreen.storyboard */,
 				174B29981F15370D000B56FE /* Info.plist */,
+				1769A4CB1F44BFA0002A576B /* Hatchback-Bridging-Header.h */,
 			);
 			path = Hatchback;
 			sourceTree = "<group>";
@@ -177,6 +209,7 @@
 			children = (
 				17F3735A1F41E7AF008C6D22 /* DateExtension.swift */,
 				17A8419F1F276D040043BCD8 /* DriveDefaults.swift */,
+				1769A4DA1F44C37F002A576B /* KiipRewardManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -193,6 +226,13 @@
 		375A12A46647C9A1A082B1D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1769A4D81F44C2FF002A576B /* CoreTelephony.framework */,
+				1769A4D61F44C2DF002A576B /* QuartzCore.framework */,
+				1769A4D41F44C2D7002A576B /* SystemConfiguration.framework */,
+				1769A4D21F44C2CC002A576B /* CoreLocation.framework */,
+				1769A4D01F44C2BB002A576B /* AdSupport.framework */,
+				1769A4CE1F44C2B3002A576B /* PassKit.framework */,
+				1769A4CC1F44C2AB002A576B /* MediaPlayer.framework */,
 				BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */,
 			);
 			name = Frameworks;
@@ -263,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				174B29971F15370D000B56FE /* LaunchScreen.storyboard in Resources */,
+				1769A4C81F44BE47002A576B /* KiipSDKResources.bundle in Resources */,
 				174B29941F15370D000B56FE /* Assets.xcassets in Resources */,
 				174B29921F15370D000B56FE /* Main.storyboard in Resources */,
 			);
@@ -326,10 +367,11 @@
 				174B298B1F15370D000B56FE /* AppDelegate.swift in Sources */,
 				174B29A11F1539D1000B56FE /* DriveViewController.swift in Sources */,
 				174B298D1F15370D000B56FE /* DashboardViewController.swift in Sources */,
-				17A8419D1F213C530043BCD8 /* HBConstants.swift in Sources */,
+				17A8419D1F213C530043BCD8 /* HBFormat.swift in Sources */,
 				174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */,
 				174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */,
 				17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */,
+				1769A4DB1F44C37F002A576B /* KiipRewardManager.swift in Sources */,
 				171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */,
 				17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */,
 				171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */,
@@ -468,6 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iinnovatellc.Hatchback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexsantarelli/GitHub/Hatchback/Hatchback/Hatchback/Hatchback-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -488,6 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iinnovatellc.Hatchback;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alexsantarelli/GitHub/Hatchback/Hatchback/Hatchback/Hatchback-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -19,6 +19,10 @@ class DriveDefaults {
     let IN_DRIVE_KEY = "CURINDRIVE" //this defaults tell us whne you're in a drive and to be monitoring the background states
     let FIRST_TIME_KEY = "FIRSTTIME" //first time drive view appears. 
     
+    //Previous Drive Keys, these are used for the dashboard
+    let PREV_DRIVE_PERCENT = "PREVIOUSDRIVERPERCENTAGE"
+    let PREV_DRIVE_TIME = "PREVIOUSDRIVEPERCENTAGE"
+    
     func setDriveStartDateForNow() {
         UserDefaults.standard.set(Date(), forKey: START_DRIVE_TIME_KEY)
     }
@@ -70,6 +74,14 @@ class DriveDefaults {
     
     func setCurrentlyInDrive() {
         UserDefaults.standard.set(true, forKey: IN_DRIVE_KEY)
+    }
+    
+    func setPrevDrivePercentage(percentage: Int) {
+        UserDefaults.standard.set(percentage, forKey: PREV_DRIVE_PERCENT)
+    }
+    
+    func setPrevDriveTime(time: TimeInterval) {
+        UserDefaults.standard.set(time, forKey: PREV_DRIVE_TIME)
     }
     
     func getDriveStatus() -> Bool {
@@ -143,6 +155,25 @@ class DriveDefaults {
     func checkForAppLeftUnflagged() -> Bool {
         let result = UserDefaults.standard.bool(forKey: LEFT_APP_UNFLAGGED_KEY)
         return result
+    }
+    
+    func getPrevDrivePercentage() -> Int {
+        
+        if UserDefaults.standard.object(forKey: PREV_DRIVE_PERCENT) == nil {
+            return 0
+        } else {
+            let percent = UserDefaults.standard.integer(forKey: PREV_DRIVE_PERCENT)
+            return percent
+        }
+    }
+    
+    func getPrevDriveTime() -> TimeInterval {
+        if UserDefaults.standard.object(forKey: PREV_DRIVE_TIME) == nil {
+            return 0.0
+        } else {
+            let time = UserDefaults.standard.double(forKey: PREV_DRIVE_TIME)
+            return time
+        }
     }
     
     func resetAppLeftFlagged() {

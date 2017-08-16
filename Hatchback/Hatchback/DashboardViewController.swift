@@ -13,7 +13,15 @@ import Graph2DFramework
 
 class DashboardViewController: UIViewController, Graph2DDelegate {
     
+    
+    //Last Drive Outlets
+    @IBOutlet weak var secondsLabel: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var lastDriveGraph: graph2D!
+    
+    let hb = HB()
+    let defaults = DriveDefaults()
+
     
     private let testGraphPoints = [pointForGraph.init(fromX: 0, fromY: abs(0 - 100)),
                                    pointForGraph.init(fromX: 14, fromY: abs(25 - 100)),
@@ -31,20 +39,37 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let defaults = DriveDefaults()
         defaults.clearAll()
         defaults.setNotInDrive()
         
-        //Setting up the graph 
-        self.lastDriveGraph.delegate = self
-        self.lastDriveGraph.graphPoints = self.testGraphPoints
-        //to create the test data
-        //self.setTestTripData()
+        self.setupLastDrive()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupLastDrive() {
+        let driveTime = defaults.getPrevDriveTime()
+        let drivePercentage = defaults.getPrevDrivePercentage()
+        
+        //format the results so that it ends up presenting nicely like on the other scenes in this app 
+        hb.formatTimeForLabel(time: driveTime, label: self.secondsLabel)
+        
+        self.percentageLabel.text = "\(drivePercentage)%"
+        
+        //we need to add the labels so that we can set them 
+        
+        //this will also be where we setup the graph so that in certain areas it could be used
+        
+        //Setting up the graph
+        self.lastDriveGraph.delegate = self
+        self.lastDriveGraph.graphPoints = self.testGraphPoints
+        //to create the test data
+        //self.setTestTripData()
     }
     
     

@@ -11,7 +11,7 @@ import Parse
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, KiipDelegate {
 
     var window: UIWindow?
 
@@ -28,6 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: hbParseConfig)
         
         PFAnalytics.trackAppOpened(launchOptions: launchOptions)
+        
+        //Kiip Setup and Initialization 
+        let KP_APP_KEY: String = "15c3ef65d126cbfb7e444c6f402bebcd"
+        let KP_APP_SECRET: String = "2d18b06671ed10239a8a4cc7f0c8f342"
+        
+        let kiip:Kiip = Kiip(appKey: KP_APP_KEY, andSecret: KP_APP_SECRET)
+        kiip.delegate = self
+        Kiip.setSharedInstance(kiip)
         
         //PFUser Setup //implement later
         //PFUser.enableRevocableSessionInBackground()
