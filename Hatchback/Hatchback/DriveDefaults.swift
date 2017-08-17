@@ -23,6 +23,10 @@ class DriveDefaults {
     let PREV_DRIVE_PERCENT = "PREVIOUSDRIVERPERCENTAGE"
     let PREV_DRIVE_TIME = "PREVIOUSDRIVEPERCENTAGE"
     
+    //User Choice Keys, these are used for UIView Setup
+    let CAR_CHOICE_KEY = "CARCHOICE"
+    let REWARD_CHOICE_KEY = "REWARDCHOICE"
+    
     func setDriveStartDateForNow() {
         UserDefaults.standard.set(Date(), forKey: START_DRIVE_TIME_KEY)
     }
@@ -82,6 +86,27 @@ class DriveDefaults {
     
     func setPrevDriveTime(time: TimeInterval) {
         UserDefaults.standard.set(time, forKey: PREV_DRIVE_TIME)
+    }
+    
+    func setCarChoice(num: Int) {
+        //0 (default) is the jeep
+        //1 bug
+        //2 convertible
+        switch num {
+        case 0:
+            UserDefaults.standard.set(0, forKey: CAR_CHOICE_KEY)
+        case 1:
+            UserDefaults.standard.set(1, forKey: CAR_CHOICE_KEY)
+        case 2:
+            UserDefaults.standard.set(2, forKey: CAR_CHOICE_KEY)
+        default:
+            UserDefaults.standard.set(0, forKey: CAR_CHOICE_KEY)
+        }
+    }
+    
+    func getCarChoice() -> Int {
+        let number = UserDefaults.standard.integer(forKey: CAR_CHOICE_KEY)
+        return number
     }
     
     func getDriveStatus() -> Bool {
