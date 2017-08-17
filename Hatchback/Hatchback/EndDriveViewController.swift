@@ -13,6 +13,7 @@ class EndDriveViewController: UIViewController {
     
     @IBOutlet weak var driveTime: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var redeemButton: UIButton!
     
     //global variables 
     let hb = HB()
@@ -73,8 +74,13 @@ class EndDriveViewController: UIViewController {
     }
     
     @IBAction func redeemButton(_ sender: Any) {
+        
         rewards.presentKiipReward() //check the percentage to make sure that it'll work out in the end 
+        
         //also after they redeem the reward chenge the color and make it gray, and un-interactable to show it can't be used
+        self.redeemButton.setImage(UIImage(named: "Redeemed"), for: .normal)
+        self.redeemButton.isUserInteractionEnabled = false
+        
         //do the same with when they do below our threshold
     }
     

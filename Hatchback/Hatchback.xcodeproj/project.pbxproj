@@ -33,6 +33,7 @@
 		17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419F1F276D040043BCD8 /* DriveDefaults.swift */; };
 		17A841A21F2788F90043BCD8 /* EndDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */; };
 		17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F3735A1F41E7AF008C6D22 /* DateExtension.swift */; };
+		17F92CBC1F461F15007043A5 /* DashboardUISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */; };
 		94D031376EBF8BED12FF0281 /* Pods_Hatchback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		17A8419F1F276D040043BCD8 /* DriveDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDefaults.swift; sourceTree = "<group>"; };
 		17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDriveViewController.swift; sourceTree = "<group>"; };
 		17F3735A1F41E7AF008C6D22 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardUISetup.swift; sourceTree = "<group>"; };
 		58D388DA18FD09C0B3BF7FBA /* Pods-Hatchback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hatchback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				17F3735A1F41E7AF008C6D22 /* DateExtension.swift */,
+				17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */,
 				17A8419F1F276D040043BCD8 /* DriveDefaults.swift */,
 				1769A4DA1F44C37F002A576B /* KiipRewardManager.swift */,
 			);
@@ -367,6 +370,7 @@
 				174B298B1F15370D000B56FE /* AppDelegate.swift in Sources */,
 				174B29A11F1539D1000B56FE /* DriveViewController.swift in Sources */,
 				174B298D1F15370D000B56FE /* DashboardViewController.swift in Sources */,
+				17F92CBC1F461F15007043A5 /* DashboardUISetup.swift in Sources */,
 				17A8419D1F213C530043BCD8 /* HBFormat.swift in Sources */,
 				174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */,
 				174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */,

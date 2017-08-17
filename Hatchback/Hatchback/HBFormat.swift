@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HB {
-    let APP_LEAVING_KEY:String = "APPLEAVING"
+
     
     func formatTimeForLabel(time: TimeInterval, label: UILabel) {
 
@@ -28,12 +28,16 @@ class HB {
             minString = "\(minInt)"
         }
         
+        if minString.characters.first == "0" {
+            minString.characters.removeFirst()
+        }
+        
         //calculating seconds to display
         let secInt = Int(seconds)
         if secInt <= 9 {
-            secString = "0\(secString)"
+            secString = "0\(secInt)"
         } else {
-            secString = "\(secString)"
+            secString = "\(secInt)"
         }
         
         label.text = "\(minString):\(secString)"

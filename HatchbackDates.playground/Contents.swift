@@ -10,3 +10,6 @@ let endingDate = df.date(from: "2017/07/25 09:25")
 let elapsedTime = endingDate?.timeIntervalSince(startingDate!)
 
 UserDefaults.standard.set(endingDate!, forKey: "ENDDATE")
+
+let num = 80.45
+let newNum = floor(num)

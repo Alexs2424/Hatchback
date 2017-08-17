@@ -42,6 +42,8 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
         defaults.clearAll()
         defaults.setNotInDrive()
         
+        
+        //view did appear for this function so that it is constantly updated when it needs to be 
         self.setupLastDrive()
         
         

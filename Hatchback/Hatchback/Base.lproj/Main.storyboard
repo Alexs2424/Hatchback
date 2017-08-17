@@ -160,7 +160,7 @@
                                 <color key="textColor" red="0.0" green="0.25882352941176467" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Speed: 34 MPH" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rn5-ro-aDl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rn5-ro-aDl">
                                 <rect key="frame" x="16" y="214" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="agd-L4-5x9"/>
@@ -286,8 +286,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="fHO-gv-4oC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <color key="textColor" red="0.18798425790000001" green="0.33997890349999998" blue="0.37661486859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrf-Le-SOd">
@@ -324,6 +324,7 @@
                     <connections>
                         <outlet property="driveTime" destination="XVi-OW-jDn" id="v5j-Zx-plo"/>
                         <outlet property="percentageLabel" destination="Xrf-Le-SOd" id="sxZ-zb-kCl"/>
+                        <outlet property="redeemButton" destination="lOz-oG-x2z" id="ITq-DR-uWI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8k2-MM-ber" userLabel="First Responder" sceneMemberID="firstResponder"/>
