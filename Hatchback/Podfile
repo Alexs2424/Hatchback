@@ -8,6 +8,6 @@ target 'Hatchback' do
   # Pods for Hatchback
   pod ‘Parse’
   pod ‘ParseUI’
-  
+  pod 'Paralayout'
 
 end

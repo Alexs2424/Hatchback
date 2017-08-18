@@ -15,53 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, KiipDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //Parse Initialization
-        let hbParseConfig = ParseClientConfiguration {
-            $0.applicationId = "vHOMNx9oySuKL32PYmX4eljf"
-            $0.clientKey = "YO6eUzEIiylXhxGNuFpbss5z6NliC2vD"
-            $0.server = "https://hatchback.herokuapp.com/parse"
-            // not recommended to include a clientkey $0.clientKey = ""
-        }
-        Parse.initialize(with: hbParseConfig)
+        let hb = HB() //contains keys for configuration and setup
+
+        Parse.initialize(with: hb.getClientServerConfiguration())
         
         PFAnalytics.trackAppOpened(launchOptions: launchOptions)
         
-        //Kiip Setup and Initialization 
-        let KP_APP_KEY: String = "15c3ef65d126cbfb7e444c6f402bebcd"
-        let KP_APP_SECRET: String = "2d18b06671ed10239a8a4cc7f0c8f342"
-        
-        let kiip:Kiip = Kiip(appKey: KP_APP_KEY, andSecret: KP_APP_SECRET)
+        //Kiip Setup and Initialization
+        let kiip:Kiip = hb.getKiipInstance()
         kiip.delegate = self
         Kiip.setSharedInstance(kiip)
         
+        //Hatchback Setup
+        hb.setDeviceSize(deviceHeight: (self.window?.rootViewController!.view.frame.height)!)
+        
         //PFUser Setup //implement later
         //PFUser.enableRevocableSessionInBackground()
-        
-        
-        //Actual setup for a trip: 
-        //Time
-        //Distance? 
-        //Distracted Time
-        //Total Time
-        //email of person who completed the trip.
-        //create a class for trips
-        
-//        let trip = PFObject(className:"Trip")
-//        trip["time"] =  12321
-//        trip.saveInBackground {
-//            (success: Bool, error: Error?) -> Void in
-//            if (success) {
-//                // The object has been saved.
-//                print("Item was saved 😅")
-//            } else {
-//                // There was a problem, check error.description
-//                print("There was an error: \(error!)\n\(error!.localizedDescription)")
-//            }
-//        }
-
         
         //Appearance base attributes
         UITabBar.appearance().tintColor = UIColor(red: 230.0/255.0, green: 84.0/255.0, blue: 32.0/255.0, alpha: 1.0)

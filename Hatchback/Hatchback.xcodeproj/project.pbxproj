@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1700A3A21F471EA80015AE68 /* DashboardConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700A3A11F471EA80015AE68 /* DashboardConstraints.swift */; };
+		1700A3A61F4729D90015AE68 /* DashboardiPhone7PConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700A3A51F4729D90015AE68 /* DashboardiPhone7PConstraints.swift */; };
 		171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */; };
 		171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171259F71F41DF0A00F6F76A /* DashbaordCell.swift */; };
 		174B298B1F15370D000B56FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B298A1F15370D000B56FE /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		0274383DCF8CE73BA0C3B5C5 /* Pods-Hatchback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchback.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback.release.xcconfig"; sourceTree = "<group>"; };
+		1700A3A11F471EA80015AE68 /* DashboardConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardConstraints.swift; sourceTree = "<group>"; };
+		1700A3A51F4729D90015AE68 /* DashboardiPhone7PConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardiPhone7PConstraints.swift; sourceTree = "<group>"; };
 		171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		171259F71F41DF0A00F6F76A /* DashbaordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashbaordCell.swift; sourceTree = "<group>"; };
 		174B29871F15370D000B56FE /* Hatchback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchback.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,23 @@
 				0274383DCF8CE73BA0C3B5C5 /* Pods-Hatchback.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1700A3A31F4729A00015AE68 /* DashboardConstraints */ = {
+			isa = PBXGroup;
+			children = (
+				1700A3A11F471EA80015AE68 /* DashboardConstraints.swift */,
+				1700A3A41F4729AF0015AE68 /* Device Specific Constraints */,
+			);
+			name = DashboardConstraints;
+			sourceTree = "<group>";
+		};
+		1700A3A41F4729AF0015AE68 /* Device Specific Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				1700A3A51F4729D90015AE68 /* DashboardiPhone7PConstraints.swift */,
+			);
+			name = "Device Specific Constraints";
 			sourceTree = "<group>";
 		};
 		171259F51F41DECE00F6F76A /* Dashboard Table View */ = {
@@ -211,6 +232,7 @@
 			children = (
 				17F3735A1F41E7AF008C6D22 /* DateExtension.swift */,
 				17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */,
+				1700A3A31F4729A00015AE68 /* DashboardConstraints */,
 				17A8419F1F276D040043BCD8 /* DriveDefaults.swift */,
 				1769A4DA1F44C37F002A576B /* KiipRewardManager.swift */,
 			);
@@ -374,8 +396,10 @@
 				17A8419D1F213C530043BCD8 /* HBFormat.swift in Sources */,
 				174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */,
 				174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */,
+				1700A3A61F4729D90015AE68 /* DashboardiPhone7PConstraints.swift in Sources */,
 				17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */,
 				1769A4DB1F44C37F002A576B /* KiipRewardManager.swift in Sources */,
+				1700A3A21F471EA80015AE68 /* DashboardConstraints.swift in Sources */,
 				171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */,
 				17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */,
 				171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */,
