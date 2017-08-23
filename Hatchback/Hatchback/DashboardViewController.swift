@@ -13,15 +13,25 @@ import Graph2DFramework
 
 class DashboardViewController: UIViewController, Graph2DDelegate {
     
+    //Tiles
+    @IBOutlet weak var tile1: UIButton! //last drive
+    @IBOutlet weak var tile2: UIButton! //rewards info
+    @IBOutlet weak var tile3: UIButton! //start drive
+    
+    //Containers
+    @IBOutlet weak var container:UIView!
     
     //Last Drive Outlets
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var lastDriveGraph: graph2D!
     
+    
     let hb = HB()
     let defaults = DriveDefaults()
-
+    
+    
+    var constraintsSet = false
     
     private let testGraphPoints = [pointForGraph.init(fromX: 0, fromY: abs(0 - 100)),
                                    pointForGraph.init(fromX: 14, fromY: abs(25 - 100)),
@@ -33,22 +43,40 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
                                    pointForGraph.init(fromX: 84, fromY: abs(100 - 100))]
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        self.container.translatesAutoresizingMaskIntoConstraints = false
+        
+        if constraintsSet != true {
+            constraintsSet = !constraintsSet
+            
+            self.view.layoutIfNeeded()
+            
+            let dashboardConstraints = DashboardConstraints(tile1: tile1,
+                                                            tile2: tile2,
+                                                            tile3: tile3,
+                                                            container: container,
+                                                            view: self.view,
+                                                            topLayoutGuide: self.topLayoutGuide)
+            dashboardConstraints.setConstraints()
+        }
     }
-
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         defaults.clearAll()
         defaults.setNotInDrive()
         
         
-        //view did appear for this function so that it is constantly updated when it needs to be 
+        //view did appear for this function so that it is constantly updated when it needs to be
         self.setupLastDrive()
-        
-        
     }
-
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,12 +86,12 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
         let driveTime = defaults.getPrevDriveTime()
         let drivePercentage = defaults.getPrevDrivePercentage()
         
-        //format the results so that it ends up presenting nicely like on the other scenes in this app 
+        //format the results so that it ends up presenting nicely like on the other scenes in this app
         hb.formatTimeForLabel(time: driveTime, label: self.secondsLabel)
         
         self.percentageLabel.text = "\(drivePercentage)%"
         
-        //we need to add the labels so that we can set them 
+        //we need to add the labels so that we can set them
         
         //this will also be where we setup the graph so that in certain areas it could be used
         
@@ -91,7 +119,7 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
         
         let startDates = [Date(), date1, date2, date3, date4, date5, date6]
         
-        //Trip Times 
+        //Trip Times
         let tripTimes = [11100, 3300, 23344, 2330, 34122, 9000, 34444, 111111, 222, 676777, 100000]
         
         for i in stride(from: 0, to: 12, by: 1) {
@@ -108,7 +136,7 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
                     print("There was a really annoying parse error \(String(describing: error?.localizedDescription))")
                 }
             }
-
+            
         }
         
     }

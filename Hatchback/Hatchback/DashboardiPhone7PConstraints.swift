@@ -12,12 +12,14 @@ import UIKit
 class dashConstraints {
     //UIElements
     let view:UIView //view from viewcontroller
+    let container:UIView
     let topLayoutGuide:UILayoutSupport //topLayoutGuide
     let tile1:UIButton //last drive
     let tile2:UIButton //goal progress
     let tile3:UIButton //start drive
     
     //Constraint constants
+    let containerHeight:CGFloat
     let tile_1_2_Width:CGFloat
     let tile_1_2_3_Height:CGFloat
     let tile3Width:CGFloat
@@ -27,10 +29,12 @@ class dashConstraints {
     
     //Initalizer
     init(view: UIView,
+         container: UIView,
          topLayoutGuide: UILayoutSupport,
          tile1: UIButton,
          tile2: UIButton,
          tile3: UIButton,
+         containerHeight: CGFloat,
          tile_1_2_Width: CGFloat,
          tile_1_2_3_Height: CGFloat,
          tile3Width: CGFloat,
@@ -38,10 +42,12 @@ class dashConstraints {
          tileTrailing: CGFloat,
          tileVertical: CGFloat) {
         self.view = view
+        self.container = container
         self.topLayoutGuide = topLayoutGuide
         self.tile1 = tile1
         self.tile2 = tile2
         self.tile3 = tile3
+        self.containerHeight = containerHeight
         self.tile_1_2_Width = tile_1_2_Width
         self.tile_1_2_3_Height = tile_1_2_3_Height
         self.tile3Width = tile3Width
