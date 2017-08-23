@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 class dashConstraints {
+    
     //UIElements
     let view:UIView //view from viewcontroller
-    let container:UIView
+    let container:UIView //table view container
     let topLayoutGuide:UILayoutSupport //topLayoutGuide
     let tile1:UIButton //last drive
     let tile2:UIButton //goal progress
@@ -99,12 +100,12 @@ class dashConstraints {
         constraintArray.append(tile1WidthConstraint)
         
         let tile1HeightConstraint = NSLayoutConstraint(item: self.tile1,
-                                                      attribute: .height,
-                                                      relatedBy: .equal,
-                                                      toItem: nil,
-                                                      attribute: .notAnAttribute,
-                                                      multiplier: 1.0,
-                                                      constant: self.tile_1_2_Width)
+                                                       attribute: .height,
+                                                       relatedBy: .equal,
+                                                       toItem: nil,
+                                                       attribute: .notAnAttribute,
+                                                       multiplier: 1.0,
+                                                       constant: self.tile_1_2_Width)
         constraintArray.append(tile1HeightConstraint)
         
         /* END TILE 1 CONSTRAINTS */
@@ -120,12 +121,12 @@ class dashConstraints {
         constraintArray.append(tile2LeadingConstraint)
         
         let tile2VerticalSpacingConstraint = NSLayoutConstraint(item: self.tile2,
-                                                        attribute: .top,
-                                                        relatedBy: .equal,
-                                                        toItem: self.topLayoutGuide,
-                                                        attribute: .bottom,
-                                                        multiplier: 1.0,
-                                                        constant: tileVertical)
+                                                                attribute: .top,
+                                                                relatedBy: .equal,
+                                                                toItem: self.topLayoutGuide,
+                                                                attribute: .bottom,
+                                                                multiplier: 1.0,
+                                                                constant: tileVertical)
         constraintArray.append(tile2VerticalSpacingConstraint)
         
         let tile2WidthConstraint = NSLayoutConstraint(item: self.tile2,
@@ -157,7 +158,7 @@ class dashConstraints {
                                                                 toItem: self.tile1,
                                                                 attribute: .bottom,
                                                                 multiplier: 1.0,
-                                                                constant: tileVertical)
+                                                                constant: self.tileVertical)
         constraintArray.append(tile3VerticalSpacingConstraint)
         
         let tile3WidthConstraint = NSLayoutConstraint(item: self.tile3,
@@ -175,7 +176,7 @@ class dashConstraints {
                                                        toItem: nil,
                                                        attribute: .notAnAttribute,
                                                        multiplier: 1.0,
-                                                       constant: self.tile3Width)
+                                                       constant: self.tile_1_2_3_Height)
         constraintArray.append(tile3HeightConstraint)
         
         /* END TILE 3 CONSTRAINTS */
