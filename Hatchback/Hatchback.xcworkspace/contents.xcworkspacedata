@@ -5,6 +5,9 @@
       location = "group:Hatchback.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Graph2DFramework.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
