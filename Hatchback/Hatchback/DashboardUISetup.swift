@@ -33,7 +33,9 @@ class DashboardUISetup {
     }
     
     func getRewardImage() {
-        
+        //find out if they are sponsored or using kiip
+        //from the defaults
+        //decide then what percentage they're at raising their goal
     }
     
 }

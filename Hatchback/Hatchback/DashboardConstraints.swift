@@ -73,10 +73,10 @@ class DashboardConstraints {
         }
     }
     
-    func getDesiredConstraints() -> [NSLayoutConstraint] { //update with a view controller
+    func getDesiredConstraints() -> [NSLayoutConstraint] { 
         switch device {
         case "7P":
-            return self.setiPhone7PConstraints() // CHANGE BUT TEMP TRUE
+            return self.setiPhone7PConstraints()
         case "7":
             return self.setiPhone7Constraints()
         case "5":

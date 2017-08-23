@@ -59,6 +59,17 @@ class dashConstraints {
     func setConstraints() -> [NSLayoutConstraint] {
         var constraintArray = [NSLayoutConstraint]()
         
+        /* CONTAINER CONSTRAINTS */
+        let containerConstraint = NSLayoutConstraint(item: self.container,
+                                                     attribute: .height,
+                                                     relatedBy: .equal,
+                                                     toItem: nil,
+                                                     attribute: .notAnAttribute,
+                                                     multiplier: 1.0,
+                                                     constant: self.containerHeight)
+        constraintArray.append(containerConstraint)
+        /* END CONTAINER CONSTRAINTS */
+        
         /* TILE ONE CONSTRAINTS */
         let tile1LeadingConstraint = NSLayoutConstraint(item: self.tile1,
                                                         attribute: .leading,
