@@ -37,12 +37,13 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
                                    pointForGraph.init(fromX: 14, fromY: abs(25 - 100)),
                                    pointForGraph.init(fromX: 28, fromY: abs(50 - 100)),
                                    pointForGraph.init(fromX: 42, fromY: abs(25 - 100)),
-                                   pointForGraph.init(fromX: 42, fromY: abs(100 - 100)),
                                    pointForGraph.init(fromX: 56, fromY: abs(75 - 100)),
                                    pointForGraph.init(fromX: 70, fromY: abs(90 - 100)),
                                    pointForGraph.init(fromX: 84, fromY: abs(100 - 100))]
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        self.title = "Dashboard"
         
         self.container.translatesAutoresizingMaskIntoConstraints = false
         

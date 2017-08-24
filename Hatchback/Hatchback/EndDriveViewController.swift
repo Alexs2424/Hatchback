@@ -14,6 +14,7 @@ class EndDriveViewController: UIViewController {
     @IBOutlet weak var driveTime: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var redeemButton: UIButton!
+    @IBOutlet weak var giftBox: UIImageView!
     
     //global variables 
     let hb = HB()
@@ -80,6 +81,8 @@ class EndDriveViewController: UIViewController {
         //also after they redeem the reward chenge the color and make it gray, and un-interactable to show it can't be used
         self.redeemButton.setImage(UIImage(named: "Redeemed"), for: .normal)
         self.redeemButton.isUserInteractionEnabled = false
+        
+        self.giftBox.image = UIImage(named: "Gift Opened")
         
         //do the same with when they do below our threshold
     }

@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hatchback/DateExtension.swift"
+            timestampString = "525273914.714413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "timeAgoSinceNow(numericDates:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Hatchback):Foundation.Date.(timeAgoSinceNow (numericDates : Swift.Bool) -&gt; Swift.String).(default argument 0)"
+                  moduleName = "Hatchback"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexsantarelli/GitHub/Hatchback/Hatchback/Hatchback/DateExtension.swift"
+                  timestampString = "525274030.196424"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Hatchback):Foundation.Date.timeAgoSinceNow (numericDates : Swift.Bool) -&gt; Swift.String"
+                  moduleName = "Hatchback"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexsantarelli/GitHub/Hatchback/Hatchback/Hatchback/DateExtension.swift"
+                  timestampString = "525274030.200718"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

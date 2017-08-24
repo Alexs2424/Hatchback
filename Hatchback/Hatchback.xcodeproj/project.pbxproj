@@ -34,6 +34,8 @@
 		17A8419D1F213C530043BCD8 /* HBFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419C1F213C530043BCD8 /* HBFormat.swift */; };
 		17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8419F1F276D040043BCD8 /* DriveDefaults.swift */; };
 		17A841A21F2788F90043BCD8 /* EndDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */; };
+		17C8DA791F4F07AB0069C901 /* WeeklyHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8DA781F4F07AB0069C901 /* WeeklyHistoryTableViewController.swift */; };
+		17C8DA7C1F4F09E40069C901 /* WeeklyHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8DA7B1F4F09E40069C901 /* WeeklyHistoryCell.swift */; };
 		17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F3735A1F41E7AF008C6D22 /* DateExtension.swift */; };
 		17F92CBC1F461F15007043A5 /* DashboardUISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */; };
 		94D031376EBF8BED12FF0281 /* Pods_Hatchback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5E7864B40A2EDD84129AE4 /* Pods_Hatchback.framework */; };
@@ -84,6 +86,8 @@
 		17A8419C1F213C530043BCD8 /* HBFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBFormat.swift; sourceTree = "<group>"; };
 		17A8419F1F276D040043BCD8 /* DriveDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDefaults.swift; sourceTree = "<group>"; };
 		17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDriveViewController.swift; sourceTree = "<group>"; };
+		17C8DA781F4F07AB0069C901 /* WeeklyHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyHistoryTableViewController.swift; sourceTree = "<group>"; };
+		17C8DA7B1F4F09E40069C901 /* WeeklyHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyHistoryCell.swift; sourceTree = "<group>"; };
 		17F3735A1F41E7AF008C6D22 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardUISetup.swift; sourceTree = "<group>"; };
 		58D388DA18FD09C0B3BF7FBA /* Pods-Hatchback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchback/Pods-Hatchback.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				174B29A81F17A590000B56FE /* WeeklyHistoryViewController.swift */,
+				17C8DA7A1F4F07CE0069C901 /* Weekly History Table View Controller */,
 			);
 			name = "Weekly History";
 			sourceTree = "<group>";
@@ -246,6 +251,15 @@
 				17A841A11F2788F90043BCD8 /* EndDriveViewController.swift */,
 			);
 			name = Drive;
+			sourceTree = "<group>";
+		};
+		17C8DA7A1F4F07CE0069C901 /* Weekly History Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17C8DA781F4F07AB0069C901 /* WeeklyHistoryTableViewController.swift */,
+				17C8DA7B1F4F09E40069C901 /* WeeklyHistoryCell.swift */,
+			);
+			name = "Weekly History Table View Controller";
 			sourceTree = "<group>";
 		};
 		375A12A46647C9A1A082B1D5 /* Frameworks */ = {
@@ -397,9 +411,11 @@
 				174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */,
 				174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */,
 				1700A3A61F4729D90015AE68 /* DashboardConstraintFormat.swift in Sources */,
+				17C8DA7C1F4F09E40069C901 /* WeeklyHistoryCell.swift in Sources */,
 				17F3735B1F41E7AF008C6D22 /* DateExtension.swift in Sources */,
 				1769A4DB1F44C37F002A576B /* KiipRewardManager.swift in Sources */,
 				1700A3A21F471EA80015AE68 /* DashboardConstraints.swift in Sources */,
+				17C8DA791F4F07AB0069C901 /* WeeklyHistoryTableViewController.swift in Sources */,
 				171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */,
 				17A841A01F276D040043BCD8 /* DriveDefaults.swift in Sources */,
 				171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */,
