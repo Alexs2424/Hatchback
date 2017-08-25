@@ -13,6 +13,9 @@ import Graph2DFramework
 
 class DashboardViewController: UIViewController, Graph2DDelegate {
     
+    //Car 
+    @IBOutlet weak var car: UIImageView!
+    
     //Tiles
     @IBOutlet weak var tile1: UIButton! //last drive
     @IBOutlet weak var tile2: UIButton! //rewards info
@@ -29,7 +32,7 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
     
     let hb = HB()
     let defaults = DriveDefaults()
-    
+    let dashboardUI = DashboardUISetup()
     
     var constraintsSet = false
     
@@ -44,6 +47,9 @@ class DashboardViewController: UIViewController, Graph2DDelegate {
     override func viewDidAppear(_ animated: Bool) {
         
         self.title = "Dashboard"
+        
+        //do not use until connected in IB
+        //self.car.image = self.dashboardUI.getCarImage()
         
         self.container.translatesAutoresizingMaskIntoConstraints = false
         

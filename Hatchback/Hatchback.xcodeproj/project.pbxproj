@@ -11,6 +11,7 @@
 		1700A3A61F4729D90015AE68 /* DashboardConstraintFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700A3A51F4729D90015AE68 /* DashboardConstraintFormat.swift */; };
 		171259F41F41D8C500F6F76A /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */; };
 		171259F81F41DF0A00F6F76A /* DashbaordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171259F71F41DF0A00F6F76A /* DashbaordCell.swift */; };
+		173DF5161F4F579B00921B7B /* SettingsUISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DF5151F4F579B00921B7B /* SettingsUISetup.swift */; };
 		174B298B1F15370D000B56FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B298A1F15370D000B56FE /* AppDelegate.swift */; };
 		174B298D1F15370D000B56FE /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B298C1F15370D000B56FE /* DashboardViewController.swift */; };
 		174B29921F15370D000B56FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174B29901F15370D000B56FE /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		1700A3A51F4729D90015AE68 /* DashboardConstraintFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardConstraintFormat.swift; sourceTree = "<group>"; };
 		171259F31F41D8C500F6F76A /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		171259F71F41DF0A00F6F76A /* DashbaordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashbaordCell.swift; sourceTree = "<group>"; };
+		173DF5151F4F579B00921B7B /* SettingsUISetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUISetup.swift; sourceTree = "<group>"; };
 		174B29871F15370D000B56FE /* Hatchback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174B298A1F15370D000B56FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		174B298C1F15370D000B56FE /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				17F3735A1F41E7AF008C6D22 /* DateExtension.swift */,
 				17F92CBB1F461F15007043A5 /* DashboardUISetup.swift */,
+				173DF5151F4F579B00921B7B /* SettingsUISetup.swift */,
 				1700A3A31F4729A00015AE68 /* DashboardConstraints */,
 				17A8419F1F276D040043BCD8 /* DriveDefaults.swift */,
 				1769A4DA1F44C37F002A576B /* KiipRewardManager.swift */,
@@ -425,6 +428,7 @@
 				17EFF8BF1F4F298000B9D6AE /* SettingsTableViewCell.swift in Sources */,
 				174B29A91F17A590000B56FE /* WeeklyHistoryViewController.swift in Sources */,
 				174B299F1F1539BF000B56FE /* SettingsViewController.swift in Sources */,
+				173DF5161F4F579B00921B7B /* SettingsUISetup.swift in Sources */,
 				1700A3A61F4729D90015AE68 /* DashboardConstraintFormat.swift in Sources */,
 				17C8DA7F1F4F13BD0069C901 /* SettingsTableViewController.swift in Sources */,
 				17C8DA7C1F4F09E40069C901 /* WeeklyHistoryCell.swift in Sources */,

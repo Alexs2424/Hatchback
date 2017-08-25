@@ -91,7 +91,7 @@ class DriveDefaults {
     func setCarChoice(num: Int) {
         //0 (default) is the jeep
         //1 bug
-        //2 convertible
+        //2 truck
         switch num {
         case 0:
             UserDefaults.standard.set(0, forKey: CAR_CHOICE_KEY)
@@ -150,6 +150,7 @@ class DriveDefaults {
         return date
     }
     
+
     //This should be changed becuase I don't believe it should be nil, and I don't think this is the best way to work with item
     
 //    func getDistractedTimeStart() -> Date? { //optional because it can be nil, if the view starts without being distracted
